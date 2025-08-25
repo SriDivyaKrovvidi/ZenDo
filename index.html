@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZenDo — Simple To‑Do</title>
+  <link rel="icon" type="image/svg+xml" href="zendo-icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="zendo-icon.svg" alt="ZenDo icon" class="brand-icon" />
+      <h1 class="brand-title">ZenDo</h1>
+    </div>
+    <div class="controls">
+      <button id="exportBtn" class="btn ghost" title="Export your data">Export</button>
+      <button id="importBtn" class="btn ghost" title="Import your data">Import</button>
+      <input id="importFile" type="file" accept="application/json" hidden />
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabsBar" aria-label="Lists">
+    <!-- Tabs dynamically injected -->
+    <button id="addTabBtn" class="tab add" aria-label="Add tab" title="Add tab">+</button>
+  </nav>
+
+  <main class="content">
+    <section class="add-task">
+      <input id="newTaskInput" class="text-input" type="text" placeholder="Brain‑dump a task… (Press Enter)" />
+      <button id="addTaskBtn" class="btn primary">Add</button>
+    </section>
+
+    <ul id="taskList" class="tasks" aria-live="polite">
+      <!-- Tasks get rendered here -->
+    </ul>
+  </main>
+
+  <template id="taskTemplate">
+    <li class="task" draggable="true">
+      <div class="task-row">
+        <label class="checkbox-wrap">
+          <input type="checkbox" class="task-done" />
+          <span class="check"></span>
+        </label>
+
+        <div class="task-main">
+          <div class="task-top">
+            <span class="drag-handle" title="Drag to reorder" aria-label="Drag to reorder" tabindex="0">⋮⋮</span>
+            <input class="task-text" type="text" />
+          </div>
+          <div class="task-actions">
+            <label class="color-picker">
+              <input type="color" class="task-color" title="Color tag" />
+              <span class="color-swatch"></span>
+            </label>
+            <button class="btn subtask">+ Subtask</button>
+            <button class="btn danger delete">Delete</button>
+          </div>
+          <ul class="subtasks"></ul>
+          <div class="subtask-add-row hidden">
+            <input class="subtask-input" type="text" placeholder="Add a subtask… (Enter)" />
+            <button class="btn subtask-add-btn">Add</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <template id="subtaskTemplate">
+    <li class="subtask">
+      <label class="checkbox-wrap">
+        <input type="checkbox" class="subtask-done" />
+        <span class="check"></span>
+      </label>
+      <input class="subtask-text" type="text" />
+      <button class="btn xs danger subtask-delete" title="Delete subtask">✕</button>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
