@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="ZenDo icon">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>  <!-- pastel yellow -->
+      <stop offset="100%" stop-color="#A7F3D0"/> <!-- pastel mint -->
+    </linearGradient>
+    <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BFDBFE"/>  <!-- pastel blue -->
+      <stop offset="100%" stop-color="#FBCFE8"/> <!-- pastel pink -->
+    </linearGradient>
+    <filter id="s">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.18)"/>
+    </filter>
+  </defs>
+  <rect width="220" height="220" x="18" y="18" rx="48" fill="#ffffff"/>
+  <g filter="url(#s)">
+    <circle cx="128" cy="128" r="76" fill="url(#g1)"/>
+    <path d="M128,52 A76,76 0 0 1 204,128 A76,76 0 0 1 128,204 Z" fill="url(#g2)"/>
+  </g>
+  <!-- checkmark -->
+  <path d="M94 132 l22 22 l46 -50" fill="none" stroke="#10B981" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
